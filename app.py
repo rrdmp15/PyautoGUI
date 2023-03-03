@@ -2,7 +2,11 @@ import pyautogui as py
 
 import time
 
+py.FAILSAFE = False
+
 py.hotkey('win', 'r')
+
+# py.typewrite('cmd')
 
 py.press('enter')
 
@@ -44,15 +48,22 @@ time.sleep(2)
 
 py.typewrite('rdayis')
 
+time.sleep(1)
+
+py.hotkey('alt', '6', '4')
+
+py.typewrite('gmail.com')
+
 time.sleep(2)
 
-email = py.locateCenterOnScreen('img/dayisMail.png')
 
-emailX = email.x
+# email = py.locateCenterOnScreen('img/dayisMail.png')
 
-emailY = email.y
+# emailX = email.x
 
-py.click(emailX, emailY)
+# emailY = email.y
+
+# py.click(emailX, emailY)
 
 time.sleep(2)
 
@@ -78,25 +89,25 @@ adjuntarY = adjuntar.y
 
 py.click(adjuntarX, adjuntarY)
 
-# time.sleep(2)
+time.sleep(2)
 
-# escritorio = py.locateCenterOnScreen('img/escritorio.png')
+escritorio = py.locateCenterOnScreen('img/escritorio.png')
 
-# escritorioX = escritorio.x
+escritorioX = escritorio.x
 
-# escritorioY = escritorio.y
+escritorioY = escritorio.y
 
-# py.click(escritorioX, escritorioY)
+py.click(escritorioX, escritorioY)
 
 time.sleep(2)
 
-# barraDeTexto = py.locateCenterOnScreen('img/barraDeTexto.png')
+barraDeTexto = py.locateCenterOnScreen('img/barraDeTexto.png')
 
-# barraDeTextoX = barraDeTexto.x
+barraDeTextoX = barraDeTexto.x
 
-# barraDeTextoY = barraDeTexto.y
+barraDeTextoY = barraDeTexto.y
 
-# py.click(barraDeTextoX, barraDeTextoY)
+py.click(barraDeTextoX, barraDeTextoY)
 
 py.typewrite('helloWorld2.rar\n')
 

@@ -1,14 +1,20 @@
 import pyautogui as py 
+import time
 
-im1 = py.screenshot('img/screen.png')
+py.hotkey('win', 'q')
 
-redactarBtn = py.locateCenterOnScreen('img/redactar-btn.png')
+py.typewrite('cmd')
 
-redactarBtnX = redactarBtn.x
+time.sleep(1)
 
-redactarBtnY = redactarBtn.y
+cmd = py.locateCenterOnScreen('img\cmd.png')
 
-py.click(redactarBtnX, redactarBtnY)
+print(cmd)
 
-print(redactarBtn)
-int
+# cmdx = cmd.x
+
+# cmdy = cmd.y
+
+# time.sleep(2)
+
+# py.click(cmdx, cmdy)
