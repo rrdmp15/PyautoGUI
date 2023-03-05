@@ -2,19 +2,31 @@ import pyautogui as py
 
 import time
 
+import pyperclip
+
 py.FAILSAFE = False
 
 py.hotkey('win', 'r')
+
+time.sleep(1)
 
 # py.typewrite('cmd')
 
 py.press('enter')
 
+time.sleep(1)
+
 py.typewrite('cd desktop\n')
+
+time.sleep(1)
 
 py.typewrite("mkdir hello-world\n")
 
+time.sleep(1)
+
 py.typewrite('cd hello-world\n')
+
+time.sleep(1)
 
 py.typewrite('COPY CON app.py\n')
 
@@ -26,17 +38,55 @@ py.typewrite('experienciaEnProgramacion = "Dayismar Rodriguez"\n')
 
 py.typewrite('edad = "Dayismar Rodriguez"\n')
 
+py.typewrite('''print('Soy ' ''')
+
+pyperclip.copy('+')
+
+py.hotkey('ctrl', 'v')
+
+py.typewrite(''' nombre ''')
+
+py.hotkey('ctrl', 'v')
+
+py.typewrite(''' ' tengo hablidad con ' ''')
+
+py.hotkey('ctrl', 'v')
+
+py.typewrite(''' skills ''')
+
+py.hotkey('ctrl', 'v')
+
+py.typewrite(''' ' mi experiencia en programacion consiste en ' ''')
+
+py.hotkey('ctrl', 'v')
+
+py.typewrite('''experienciaEnProgramacion''')
+
+py.hotkey('ctrl', 'v')
+
+py.typewrite(''' ' y mi edad es' ''')
+
+py.hotkey('ctrl', 'v')
+
+py.typewrite('''edad)\n''')
+
 py.hotkey('ctrl', 'c')
 
 py.typewrite('cd..\n')
 
+time.sleep(1)
+
 py.typewrite('rar a -r -rr "helloWorld2.rar" "hello-world"\n')
+
+time.sleep(1)
 
 py.typewrite('start chrome https://mail.google.com/mail/u/0/?tab=rm"&"ogbl#inbox\n')
 
-time.sleep(2)
+time.sleep(3)
 
-redactarBtnPoint = py.locateCenterOnScreen('img/redactar-btn.png')
+redactarBtnPoint = py.locateCenterOnScreen('img/redactar.png')
+
+time.sleep(1)
 
 redactarBtnPointX = redactarBtnPoint.x
 
@@ -44,15 +94,15 @@ redactarBtnPointY = redactarBtnPoint.y
 
 py.click(redactarBtnPointX, redactarBtnPointY)
 
-time.sleep(2)
-
-py.typewrite('rdayis')
-
 time.sleep(1)
 
-py.hotkey('alt', '6', '4')
+py.typewrite('rdayismar')
 
-py.typewrite('gmail.com')
+pyperclip.copy('@')
+
+py.hotkey('ctrl', 'v')
+
+py.typewrite('gmail.com\n')
 
 time.sleep(2)
 
@@ -64,8 +114,6 @@ time.sleep(2)
 # emailY = email.y
 
 # py.click(emailX, emailY)
-
-time.sleep(2)
 
 asunto = py.locateCenterOnScreen('img/asunto.png')
 
@@ -89,27 +137,32 @@ adjuntarY = adjuntar.y
 
 py.click(adjuntarX, adjuntarY)
 
-time.sleep(2)
-
 escritorio = py.locateCenterOnScreen('img/escritorio.png')
 
-escritorioX = escritorio.x
+escritorioHover = py.locateCenterOnScreen('img/escritorio-hover.png')
 
-escritorioY = escritorio.y
+if escritorio:
+    escritorioX = escritorio.x
+    escritorioY = escritorio.y
+    py.click(escritorioX, escritorioY)
+else:
+    escritorioHoverX = escritorioHover.x
+    escritorioHoverY = escritorioHover.y
+    py.click(escritorioHoverX, escritorioHoverY)
 
-py.click(escritorioX, escritorioY)
+time.sleep(1)
 
-time.sleep(2)
+buscar = py.locateCenterOnScreen('img/buscar.png')
 
-barraDeTexto = py.locateCenterOnScreen('img/barraDeTexto.png')
+buscarHover = py.locateCenterOnScreen('img/buscar-hover.png')
 
-barraDeTextoX = barraDeTexto.x
-
-barraDeTextoY = barraDeTexto.y
-
-py.click(barraDeTextoX, barraDeTextoY)
-
-py.typewrite('helloWorld2.rar\n')
+if buscar:
+    buscarX = buscar.x
+    buscarY = buscar.y
+    py.click(buscarX, buscarY)
+    py.typewrite('helloWorld2.rar\n')
+else:
+    py.typewrite('helloWorld2.rar\n')
 
 time.sleep(2)
 
