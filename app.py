@@ -1,7 +1,7 @@
+#Este codigo crea un archivo python y lo comprime en la carpeta Escritorio, despues ingresa al correo gmail y envia un correo con asunto.
+
 import pyautogui as py
-
 import time
-
 import pyperclip
 
 py.FAILSAFE = False
