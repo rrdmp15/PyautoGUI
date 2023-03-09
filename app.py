@@ -106,15 +106,6 @@ py.typewrite('gmail.com\n')
 
 time.sleep(2)
 
-
-# email = py.locateCenterOnScreen('img/dayisMail.png')
-
-# emailX = email.x
-
-# emailY = email.y
-
-# py.click(emailX, emailY)
-
 asunto = py.locateCenterOnScreen('img/asunto.png')
 
 asuntoX = asunto.x
